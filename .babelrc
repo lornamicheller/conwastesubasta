@@ -1,0 +1,34 @@
+{
+  "env": {
+    "development": {
+      "presets": ["next/babel", "flow"],
+      "plugins": [
+        ["transform-define", "./env-config.js"],
+        "flow-react-proptypes",
+        ["babel-plugin-root-import", {
+          "rootPathPrefix": "!"
+        }]
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        ["transform-define", "./env-config.js"],
+        ["babel-plugin-root-import", {
+          "rootPathPrefix": "!"
+        }]
+      ]
+    },
+    "test": {
+      // next/babel does not transpile import/export syntax.
+      // So, using es2015 in the beginning will fix that.
+      "presets": ["es2015", "next/babel"],
+      "plugins": [
+        ["transform-define", "./env-config.js"],
+        ["babel-plugin-root-import", {
+          "rootPathPrefix": "!"
+        }]
+      ]
+    }
+  }
+}

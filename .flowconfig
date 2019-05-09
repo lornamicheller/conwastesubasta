@@ -1,0 +1,14 @@
+[ignore]
+.*/.next/.*
+.*/static/.*
+.*/__tests__/.*
+[include]
+./flow-typed/npm/.*
+
+[libs]
+./lib/interfaces/index.js
+
+[options]
+module.name_mapper='!'->'<PROJECT_ROOT>'
+
+[lints]

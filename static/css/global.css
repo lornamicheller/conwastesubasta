@@ -1,0 +1,118 @@
+/**
+  Flex css start
+ */
+.containerFlexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapFlex {
+  flex-wrap: wrap;
+}
+
+.containerFlexCol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.flexStart {
+  justify-content: flex-start;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.flexEnd {
+  justify-content: flex-end;
+}
+
+.flexAround {
+  justify-content: space-around;
+}
+
+.flexBetween {
+  justify-content: space-between;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+/**
+ Flex css end
+ */
+
+/*.btn {*/
+  /*padding: .7rem 1rem;*/
+/*}*/
+
+select.form-control:not([size]):not([multiple]) {
+  height: auto;
+}
+
+.progress {
+  margin-bottom: 0;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.input-field label.active {
+  top: -14px;
+  position: absolute;
+}
+
+.navbar.navbar-light .breadcrumb .dropdown-menu a, .navbar.navbar-light .nav-item .dropdown-menu a {
+  padding: 0;
+}
+
+.inputError {
+  font-size: small;
+  position: absolute;
+  bottom: -20px;
+}
+
+.error {
+  color: red!important;
+}
+
+.form-control.error {
+  border-bottom: 1px solid red;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  content: "";
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+}
+
+.select-wrapper span.caret {
+  border-top: none;
+}
