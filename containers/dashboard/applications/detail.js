@@ -287,7 +287,7 @@ class Detail extends Component {
                     className="btn btn-primary waves-effect"
                     onClick={this.toggle}
                   >
-                    Agregar suplidorr
+                    Agregar suplidor
                   </button>
                 </div>
               </div>

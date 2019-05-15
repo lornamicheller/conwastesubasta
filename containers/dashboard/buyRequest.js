@@ -68,13 +68,15 @@ class BuyRequest extends Component {
       quantity: 0,
       note: "",
       workOrder: "",
-      disable: true
+      disable: true,
+      products: [],
     };
     this.regionSelectChange = this.regionSelectChange.bind(this);
     this.projectSelectChange = this.projectSelectChange.bind(this);
     this.supervisorSelectChange = this.supervisorSelectChange.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    this.addProduct = this.addProduct.bind(this);
   }
   componentDidMount() {
     const { setProjectsAction } = this.props;
@@ -180,6 +182,19 @@ class BuyRequest extends Component {
     }
   }
 
+  async addProduct(e) {
+    e.preventDefault();
+    const {
+      products
+    } = this.state;
+
+    products.push({});
+
+    this.setState({
+      products: products
+    });
+  }
+
   render() {
     const { regions, projects, loading, supervisors } = this.props;
     const {
@@ -189,6 +204,7 @@ class BuyRequest extends Component {
       articleName,
       quantity,
       note,
+      products,
       workOrder,
       disable
     } = this.state;
@@ -214,6 +230,8 @@ class BuyRequest extends Component {
                     projects={projects}
                     supervisors={supervisors}
                     articleName={articleName}
+                    products={products}
+                    addProduct={this.addProduct}
                     quantity={quantity}
                     note={note}
                     workOrder={workOrder}
@@ -223,6 +241,7 @@ class BuyRequest extends Component {
                     readOnly={false}
                     disable={disable}
                   />
+                 
                 </div>
               </div>
             </div>

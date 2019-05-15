@@ -10,7 +10,8 @@ class CardList extends Component {
       projectname: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
       regionname: PropTypes.string.isRequired,
-      workorder: PropTypes.string.isRequired
+      workorder: PropTypes.string.isRequired,
+      products: [],
     }).isRequired,
     seeMore: PropTypes.bool.isRequired
   };
@@ -24,8 +25,11 @@ class CardList extends Component {
       projectname,
       quantity,
       regionname,
-      workorder
+      workorder,
     } = req;
+
+    const products = [{name : 'product1', quantity : 100}];
+
     return (
       <div className="card">
         <div className="card-block">
@@ -60,6 +64,22 @@ class CardList extends Component {
                 <span className="font-weight-bold">Nota: </span>{note}
               </p>
             </div>
+            {products.map((req, index) => (
+            <div className="row">
+                <div className="col-12">
+                    <div className="md-form">
+                        <label htmlFor="articleName">Nombre de artículo</label>
+                        <input type="text" name="articleName" id="articleName" className="form-control" value={req.name} />
+                    </div>
+                </div>
+                <div className="col-3">
+                    <div className="md-form">
+                        <label className="active" htmlFor="quantity">Cantidad</label>
+                        <input type="number" name="quantity" id="amount" className="form-control" value={req.quantity} />
+                    </div>
+                </div>
+            </div>
+          ))} 
             {seeMore &&
               <div className="col-sm-12">
                 <Link href={`/dashboard/applications/detail?id=${id}`}>
